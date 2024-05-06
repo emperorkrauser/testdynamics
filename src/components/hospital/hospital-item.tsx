@@ -24,7 +24,6 @@ const ItemLinks = styled(Button)`
 
 export const HospitalItem = (props: any) => {
   const { name, id } = props.data;
-  console.log('props', props);
   return (
     <>
       <Card variant="outlined" sx={{ backgroundColor: 'rgb(51,63,81)' }}>

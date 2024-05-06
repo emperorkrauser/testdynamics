@@ -27,8 +27,6 @@ export const DataForm = () => {
   const [hasError, setHasError] = useState<boolean>(false);
 
   const handleSubmit = () => {
-    console.log('trigger handleSubmit');
-    console.log('hasError', hasError);
     const id = new Date(Date.now()).getTime();
     dispatch(updateForm({ ...formData, id }));
     setFormData({
@@ -48,10 +46,8 @@ export const DataForm = () => {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const validateForm = (data: any) => {
-    console.log('trigger validateForm');
     for (const key in data) {
       const formVal = data[key].trim();
-      console.log('key and value', key, formVal);
       if (!formVal || formVal === '' || formVal === ' ') {
         setIsError({ ...isError, [key]: true });
       }
@@ -67,8 +63,6 @@ export const DataForm = () => {
 
   const checkValidity = () => {
     const hasErrors = validateForm(formData);
-    console.log('hasErrors', hasErrors);
-    console.log('trigger checkValidity');
     if (hasErrors) return;
     handleSubmit();
   };

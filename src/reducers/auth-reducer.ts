@@ -20,10 +20,7 @@ export const authSlice = createSlice({
     isAuth: (state, action) => {
       state.isAuth = action.payload;
     },
-    storeUser: (state, action) => {
-      state.user = action.payload;
-    },
   },
 });
 
-export const { isLogout, isAuth, storeUser } = authSlice.actions;
+export const { isLogout, isAuth } = authSlice.actions;

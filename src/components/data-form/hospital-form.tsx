@@ -63,8 +63,6 @@ export const HospitalForm = () => {
   const [hasError, setHasError] = useState<boolean>(false);
 
   const handleSubmit = () => {
-    console.log('trigger handleSubmit');
-    console.log('hasError', hasError);
     dispatch(updateHospitals({ ...formData }));
     setFormData({
       name: '',
@@ -78,7 +76,6 @@ export const HospitalForm = () => {
 
   const handleChange = (data) => {
     const { name, value } = data;
-    console.log('handleChange data', data);
     setFormData({
       ...formData,
       [name ?? data.target.name]: value ?? data.target.value,
@@ -87,12 +84,9 @@ export const HospitalForm = () => {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const validateForm = (data: any) => {
-    console.log('trigger validateForm');
-    console.log('data validate Form', data);
     for (const key in data) {
       const formVal =
         typeof data[key] === 'string' ? data[key].trim() : data[key];
-      console.log('key and value', key, formVal);
       if (
         (typeof formVal === 'string' && !formVal) ||
         formVal === '' ||
@@ -117,8 +111,6 @@ export const HospitalForm = () => {
 
   const checkValidity = () => {
     const hasErrors = validateForm(formData);
-    console.log('hasErrors', hasErrors);
-    console.log('trigger checkValidity');
     if (hasErrors) return;
     handleSubmit();
   };

@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+// For registering users
 export const userSlice = createSlice({
   name: 'users',
   initialState: {
@@ -7,8 +8,6 @@ export const userSlice = createSlice({
   },
   reducers: {
     updateForm: (state, action) => {
-      console.log('updateForm state', state);
-      console.log('updateForm action', action);
       state.users = [...state.users, action.payload] as any;
     },
   },
