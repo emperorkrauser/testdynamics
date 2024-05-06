@@ -100,7 +100,7 @@ export const HospitalItem = (props: any) => {
             </Grid>
             <Grid sx={{ textAlign: 'right' }} item xs={6}>
               <ItemLinks>
-                Show details <ArrowRightAltIcon />
+                Full overview <ArrowRightAltIcon />
               </ItemLinks>
             </Grid>
           </Grid>
