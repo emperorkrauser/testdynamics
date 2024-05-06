@@ -1,5 +1,4 @@
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { HospitalForm } from '../data-form';
 
@@ -35,7 +34,7 @@ export const AppModal = (props: {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <HospitalForm />
+          <HospitalForm handleCloseModal={handleCloseModal} />
         </Box>
       </Modal>
     </>

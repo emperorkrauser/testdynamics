@@ -44,7 +44,8 @@ interface HospitalValueSubmitProps {
   plan: string;
 }
 
-export const HospitalForm = () => {
+export const HospitalForm = (props) => {
+  const { handleCloseModal } = props;
   const dispatch = useDispatch();
   const [formData, setFormData] = useState<HospitalValueSubmitProps>({
     name: '',
@@ -72,6 +73,7 @@ export const HospitalForm = () => {
       plan: '',
     });
     setHasError(false);
+    handleCloseModal(true);
   };
 
   const handleChange = (data) => {
@@ -166,7 +168,7 @@ export const HospitalForm = () => {
             sx={{ color: '#fff' }}
             id="demo-row-radio-buttons-group-label"
           >
-            Gender
+            Status
           </FormLabel>
           <RadioGroup
             row
